@@ -223,23 +223,24 @@ class StateContainer extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
 
-                    <label>
-                        Please search a U.S city:
-        <input type="text" name="city" value={this.state.city} onChange={this.handleChange} />
-                    </label>
-                    <input type="submit" value="submit" />
-                </form>
-                
                 <Results 
                                     weatherTemp={this.state.weatherTemp} 
                                     weatherDescript={this.state.weatherDescript}
                                     weatherHi={this.state.weatherHi}
                                     weatherLow={this.state.weatherLow}
                                     gifImg={this.state.giphyFeel}
-                
+
                 />
+
+                <form onSubmit={this.handleSubmit} style={{backgroundColor:"none"}}>
+                    <label>
+                        Please search a U.S city:<br></br>
+        <input type="text" name="city" value={this.state.city} onChange={this.handleChange} style={{width:"300px",height:"30px", fontSize:"20px"}} />
+                    </label><br></br>
+                    <input type="submit" value="Submit" style={{backgroundColor:"black", border:"none",width:"305px", height:"50px", margin:"5px", color:"white"}}/>
+                </form>
+                
             </div>
         )
     }
